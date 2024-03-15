@@ -1,21 +1,28 @@
 CC=gcc
 CFLAGS=-Wall -Wextra -g
-TARGET=sodump
-SRCDIR=src/sodump
+TARGETS=sodump scinject
+SRCDIR_SODUMP=src/sodump
+SRCDIR_SCINJECT=src/scinject
 BINDIR=/usr/bin
 
-SRCS=$(wildcard $(SRCDIR)/*.c)
-OBJS=$(SRCS:.c=.o)
+SRCS_SODUMP=$(wildcard $(SRCDIR_SODUMP)/*.c)
+SRCS_SCINJECT=$(wildcard $(SRCDIR_SCINJECT)/*.c)
+OBJS_SODUMP=$(SRCS_SODUMP:.c=.o)
+OBJS_SCINJECT=$(SRCS_SCINJECT:.c=.o)
 
 .PHONY: all clean install
 
-all: $(TARGET)
+all: $(TARGETS)
 
-$(TARGET): $(OBJS)
+sodump: $(OBJS_SODUMP)
 	$(CC) $(CFLAGS) $^ -o $@
 
-install: $(TARGET)
-	cp $(TARGET) $(BINDIR)
+scinject: $(OBJS_SCINJECT)
+	$(CC) $(CFLAGS) $^ -o $@
+
+install: $(TARGETS)
+	cp sodump $(BINDIR)
+	cp scinject $(BINDIR)
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS_SODUMP) $(OBJS_SCINJECT) $(TARGETS)

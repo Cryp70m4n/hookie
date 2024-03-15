@@ -17,7 +17,7 @@
 
 int main(int argc, char *argv[]) {
 		if (argc < 3) {
-				printf("\033[0;31m[X] >>> Sufficient number of arguments.\033[0m\n\033[0;34m[?] => USAGE: sodump --pid PID\033[0m\n");
+				printf("\033[0;31m[X] >>> Insufficient number of arguments.\033[0m\n\033[0;34m[?] => USAGE: sodump --pid PID\033[0m\n");
 				return -1;
 		}
 
