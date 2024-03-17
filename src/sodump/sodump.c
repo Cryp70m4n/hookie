@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../include/sodump/data.h"
+#include "sodump/data.h"
 
 int main(int argc, char *argv[]) {
   if (argc < 3) {
