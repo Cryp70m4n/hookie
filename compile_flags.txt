@@ -1,0 +1,4 @@
+-Wall
+-Wextra
+-g 
+-I./include/

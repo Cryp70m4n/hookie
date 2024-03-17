@@ -1,5 +1,6 @@
 CC=gcc
-CFLAGS=-Wall -Wextra -g
+INCLUDE_DIR=./include/
+CFLAGS=-Wall -Wextra -g -I$(INCLUDE_DIR)
 TARGETS=sodump scinject
 SRCDIR_SODUMP=src/sodump
 SRCDIR_SCINJECT=src/scinject
